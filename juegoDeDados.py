@@ -1,7 +1,5 @@
 from random import randint
 
-apuesta=100
-max = 100
 
 def Perder(fondo, apuesta):
     
@@ -31,20 +29,22 @@ def Play(fondo):
         fondo =resultado
     return ronda
 
-def Simulacion():
+def Simulacion(fondo, max)-> int:
     acumulador = 0
     for i in range(1,max):
-        juego = Play(apuesta)
+        juego = Play(fondo)
         acumulador+=juego    
 
     return acumulador
 
-def promedio():
-    print(Simulacion()/max)
+def promedio(fondo, max):
+    print(f'El promedio es de {Simulacion(fondo, max)/max}')
 
     
 
 
 
-if __name__== "main":
-    promedio()
+if __name__== "__main__":
+    fondo_inicial=100
+    max = 100
+    promedio(fondo_inicial,max)
